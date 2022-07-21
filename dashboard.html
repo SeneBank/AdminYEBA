@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Admin dashboard</title>
+  <link rel="icon" href="img/logo.jpg" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/admin.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <!--Main Navigation-->
+  <header>
+
+
+      <!-- Sidebar -->
+      <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+        <div class="position-sticky">
+          <div class="list-group list-group-flush mx-6 mt-2">
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+            <i class="fas fa-tachometer-alt fa-fw me-1" ></i><span>Tableau de bord </span>
+          </a>
+            <!-- Collapse 1 -->
+            <a
+              class="list-group-item list-group-item-action py-2 ripple" data-mdb-toggle="collapse"
+              href="#collapseExample1"
+              aria-expanded="true"
+              aria-controls="collapseExample1">
+              <i class="fas fa-users fa-fw me-1"></i><span>Gérer les Utilisateurs</span>
+            </a>
+            <!-- Collapsed content -->
+            <ul id="collapseExample1" class="collapse list-group list-group-flush">
+              <li class="list-group-item py-1">
+                <a href="User/all.html" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Tous les utilisateurs</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="User/actifUsers.html" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Utilisateurs actifs</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Utilisateurs bannis</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>E-mails non vérifiés</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>SMS non vérifiés</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="User/sendEmail.html" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Email à tous</a>
+              </li>              
+            </ul>
+            <!-- Collapse 1 -->
+
+            <!-- Collapse 2 -->
+            <a
+              class="list-group-item list-group-item-action py-2 ripple"
+              aria-current="true"
+              data-mdb-toggle="collapse"
+              href="#collapseExample2"
+              aria-expanded="true"
+              aria-controls="collapseExample2">
+              <i class="fas fa-share-square fa-fw me-1"></i><span>Transfert d'argent</span>
+            </a>
+            <!-- Collapsed content -->
+            <ul id="collapseExample2" class="collapse list-group list-group-flush">
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Transferts en attente</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Transferts rejetés</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Virements bancaires</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Autres virements bancaires</a>
+              </li>
+            </ul>
+            <!-- Collapse 2 -->
+
+            <!-- Collapse 3 -->
+            <a
+              class="list-group-item list-group-item-action py-2 ripple"
+              aria-current="true"
+              data-mdb-toggle="collapse"
+              href="#collapseExample3"
+              aria-expanded="true"
+              aria-controls="collapseExample3">
+              <i class="fas fa-cloud-download-alt fa-fw me-1"></i><span>Dépôt d'argent</span>
+            </a>
+            <!-- Collapsed content -->
+            <ul id="collapseExample3" class="collapse list-group list-group-flush">
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Dépôts en attente</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Dépôts approuvés</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Dépôts réussis</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Dépôts rejetés</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Tous les dépôts</a>
+              </li>
+            </ul>
+            <!-- Collapse 3 -->
+
+            <!-- Collapse 4 -->
+            <a
+              class="list-group-item list-group-item-action py-2 ripple"
+              aria-current="true"
+              data-mdb-toggle="collapse"
+              href="#collapseExample4"
+              aria-expanded="true"
+              aria-controls="collapseExample4">
+              <i class="fas fa-money-bill fa-fw me-1"></i><span>Retrait d'argent</span>
+            </a>
+            <!-- Collapsed content -->
+            <ul id="collapseExample4" class="collapse list-group list-group-flush">
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Méthodes de retrait</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Retraits en attente </a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Retraits approuvés</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Retraits rejetés</a>
+              </li>
+              <li class="list-group-item py-1">
+                <a href="" class="text-reset"><i class="fas fa-caret-right pe-2"></i>Historique des retraits</a>
+              </li>
+            </ul>
+            <!-- Collapse 4 -->
+
+            <a href="User/setting.html" id="setting" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+              <i class="fas fa-cog fa-fw me-1" ></i><strong>Paramètres</strong>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!-- Sidebar -->
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-university fa-fw me-1"></i> <span>YEBA</span>
+        </a>
+
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+          <!-- Notification dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link me-4 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-bell"></i>
+              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Nouvelle connexion: aujourd'hui</a></li>
+              <li><a class="dropdown-item" href="#">Dernère connexion: hier</a></li>
+              <li>
+                <a class="dropdown-item" href="#"></a>
+              </li>
+            </ul>
+          </li>
+
+
+          <!-- Icon dropdown 
+          <li class="nav-item dropdown">
+            <a class="nav-link me-4 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown" role="button"
+              data-mdb-toggle="dropdown" aria-expanded="false">
+              <i class="flag flag-france m-0"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag flag-france"></i>Français
+                  <i class="fa fa-check text-success ms-2"></i></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag flag-united-states"></i>Anglais</a>
+              </li>
+            </ul>
+          </li>-->
+
+
+          <!-- Avatar -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+              id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" height="25"
+                alt="" loading="lazy" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Mon profil</a></li>
+              <li><a class="dropdown-item" href="#">Paramètres</a></li>
+              <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main style="margin-top: 58px">
+    <div class="container pt-4">
+
+      <!--Section: Minimal statistics cards -->
+      <section>
+
+        <div class="row">
+          <div class="col-xl-3 col-sm-6 col-12 mb-4" >
+            <div class="card bg-primary box-shadow" >
+              <div class="card-body">
+                <div class="d-flex align-self-center px-md-1">
+                  <div class="text-center" style="margin: auto; color: white;">
+                    <!--i class="fas fa-money-check text-info fa-3x"></i-->
+                    <h2>100K</h2>
+                    <p class="mb-1">Utilisateurs inscrits</p>
+                     <a href="User/all.html" class="btn btn-outline-light"> Voir</a> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+         <div class="col-xl-3 col-sm-6 col-12 mb-4 ">
+            <div class="card bg-info">
+              <div class="card-body">
+                <div class="d-flex align-self-center px-md-1">
+                  <div class="text-center" style="margin: auto; color: white;">
+                    <!--i class="fas fa-exchange-alt text-warning fa-3x"></i-->
+                    <h2>50K</h2>
+                    <p class="mb-1">Utilisateurs vérifiés</p>
+                    <a href="#" class="btn btn-outline-light"> Voir</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         <div class="col-xl-3 col-sm-6 col-12 mb-4">
+            <div class="card bg-warning ">
+              <div class="card-body">
+                <div class="d-flex align-self-center px-md-1">
+                  <div class="text-center" style="margin: auto;  color: white;">
+                    <!--i class="fas fa-piggy-bank text-danger fa-3x"></i-->
+                    <h2>36,000,000€</h2>
+                    <p class="mb-1">Dépôt total</p>
+                    <a href="#" class="btn btn-outline-light"> Voir</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         <div class="col-xl-3 col-sm-6 col-12 mb-4">
+            <div class="card bg-danger">
+              <div class="card-body">
+                <div class="d-flex align-self-center px-md-1">
+                  <div class="text-center" style="margin: auto;  color: white;">
+                    <!--i class="fas fa-money-check-alt fa-3x"></i-->
+                    <h2>6,000,000€</h2>
+                    <p class="mb-1">Retrait total</p>
+                    <a href="#" class="btn btn-outline-light "> Voir</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!--div class="p-5 text-center bg-light">
+          <h3 class="mb-0 h3"><strong>Vos Cartes</strong> <i fas class="fas fa-credit-card fa-xs"></i></h3>-->
+        </div>
+      </section> 
+      <!--Section: Minimal statistics cards-->
+
+
+
+       <!--Section: Statistics with subtitles-->
+      <section>
+        <div class="row">
+        <div class="row">
+          <div class="col-xl-6 col-md-12 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between p-md-1">
+                  <div class="d-flex flex-row">
+                    <div class="align-self-center">
+                      <i class="fas fa-money-check-alt text-success fa-2x me-2"></i>
+                    </div>
+                    <div>
+                      <h4>Solde global</h4>
+                    </div>
+                  </div>
+                  <div class="align-self-center">
+                    <h2 class="h1 mb-0">3,000,000€</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-md-12 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between p-md-1">
+                  <div class="d-flex flex-row">
+                    <div class="align-self-center">
+                      <i class="fas fa-users text-info fa-2x me-2"></i>
+                    </div>
+                    <div>
+                      <h4>Utilisateurs actifs</h4>
+                    </div>
+                  </div>
+                  <div class="align-self-center">
+                    <h2 class="h1 mb-0">45</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       <div class="row">
+          <div class="col-xl-6 col-md-12 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between p-md-1">
+                  <div class="d-flex flex-row">
+                    <div class="align-self-center">
+                      <i class="fas fa-piggy-bank text-warning fa-2x me-2"></i>
+                    </div>
+                    <div>
+                      <h4>Dépôts en attente</h4>
+                    </div>
+                  </div>
+                  <div class="align-self-center">
+                    <h2 class="h1 mb-0">84</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-md-12 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between p-md-1">
+                  <div class="d-flex flex-row">
+                    <div class="align-self-center">
+                      <i class="fas fa-money-bill text-danger fa-2x me-2"></i>
+                    </div>
+                    <div>
+                      <h4>Retraits en attente</h4>
+                    </div>
+                  </div>
+                  <div class="align-self-center">
+                    <h2 class="h1 mb-0">18</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section> 
+      <!--Section: Statistics with subtitles-->
+
+        <!--section: card-->
+       <section class="mb-4">
+        <div class="card">
+          <div class="card-header py-3">
+            <h5 class="mb-0 text-center"><strong>STATISTIQUES</strong></h5>
+          </div>
+          <div class="card-body">
+            <canvas class="my-4 w-100" id="myChart" height="380"></canvas>
+          </div>    
+        </div>
+      </section> 
+      <!--section: card END-->
+
+        <!--Section: Management des users 
+        <section class="mb-4">
+          <div class="card">
+            <div class="card-header py-3">
+              <h5 class="mb-0 text-center"><strong>GESTION DES UTILISATEURS</strong></h5>
+            </div>
+              <div class="card-body">
+              <div class="table-responsive">
+                <table class="table caption-top">             
+                  <thead>
+                    <tr>
+                      <th scope="col">Utilisateurs</th>
+                      <th scope="col">Email | Téléphone</th>
+                      <th scope="col">PAYS</th>
+                      <th scope="col">Membre depuis le</th>
+                      <th scope="col">Solde | N° de compte</th>
+                      <th scope="col">ACTIONS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>OMAR SY</td>
+                      <td>omarsy@gmail.com</td>
+                      <td>SN</td>
+                      <td>06-06-22</td>
+                      <td>
+                        <span>0,00€</span>
+                        <span class="d-block">YEBA1210912300</span>
+                      </td>
+                      <td><a href=""><i class="fas fa-desktop fa-lg"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>ABDOUL KANE</td>
+                      <td>abdoulkane@gmail.com</td>
+                      <td>SN</td>
+                      <td>06-05-22</td>
+                      <td>
+                        <span>0,00€</span>
+                        <span class="d-block">YEBA1210912309</span>                      
+                      </td>
+                      <td><a href=""><i class="fas fa-desktop fa-lg"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>BAMBA GNING</td>
+                      <td>bambagning@gmail.com</td>
+                      <td>SN</td>
+                      <td>06-04-22</td>
+                      <td>
+                        <span>0,00€</span>
+                        <span class="d-block">YEBA1210345301</span>                      
+                      </td>
+                      <td><a href=""><i class="fas fa-desktop fa-lg"></i></a></td>
+                    </tr>
+                  </tbody>
+              </table>
+
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+    
+    </div>
+  </main>
+  <!--Main layout-->
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript" src="js/admin.js"></script>
+
+</body>
+
+</html>
